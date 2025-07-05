@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/employeeList.css';
 
 function EmployeeList() {
   return (

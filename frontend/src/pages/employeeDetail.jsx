@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/employeeDetail.css';
 
 function EmployeeDetail() {
   return (

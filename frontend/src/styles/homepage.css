@@ -1,0 +1,6 @@
+/* homepage用CSS（全体レイアウト・共通部品） */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}

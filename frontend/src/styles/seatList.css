@@ -1,0 +1,38 @@
+/* seatList用CSS（席一覧・席マップ） */
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+.seat {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  font-size: 14px;
+}
+.seat.available {
+  background: #dcfce7;
+  border: 2px solid #10b981;
+  color: #065f46;
+}
+.seat.occupied {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #991b1b;
+}
+.seat:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .seat-map {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
