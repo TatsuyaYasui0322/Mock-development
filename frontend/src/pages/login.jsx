@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/login.css';
 
 function Login({ onLogin }) {
   // 入力値の状態管理（例: useState）

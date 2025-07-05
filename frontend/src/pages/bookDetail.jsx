@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/bookDetail.css';
 
 function BookDetail() {
     return (

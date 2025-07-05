@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/nabigation.css';
 
 // ナビゲーションボタンのデータ
 const navButtons = [
