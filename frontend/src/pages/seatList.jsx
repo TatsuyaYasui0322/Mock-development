@@ -1,17 +1,14 @@
 import React from 'react';
 import '../styles/seatList.css';
 
-function SeatList() {
+function SeatList({ className }) {
   return (
     <>
-
-{/* 7. 席一覧画面 */}
-    <div id="seats" className="screen active">
+    <div id="seats" className={className}>
       <div className="header">
         <h1>席一覧 - フロアA</h1>
         <div className="user-info">
-          <div className="user-avatar">田</div>
-          <span>田中太郎</span>
+          <span>ログイン : 田中太郎</span>
         </div>
       </div>
       <div className="content">

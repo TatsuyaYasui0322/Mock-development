@@ -1,17 +1,14 @@
 import React from 'react';
 import '../styles/seatRegister.css';
 
-function SeatRegister() {
+function SeatRegister({ className }) {
   return (
     <>
-
-{/* 8. 席登録・使用画面 */}
-    <div id="seat-register" className="screen active">
+    <div id="seat-register" className={className}>
       <div className="header">
         <h1>席登録・使用</h1>
         <div className="user-info">
-          <div className="user-avatar">田</div>
-          <span>田中太郎</span>
+          <span>ログイン : 田中太郎</span>
         </div>
       </div>
       <div className="content">

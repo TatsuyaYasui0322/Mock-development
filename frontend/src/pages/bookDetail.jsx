@@ -1,17 +1,14 @@
 import React from 'react';
 import '../styles/bookDetail.css';
 
-function BookDetail() {
+function BookDetail({ className }) {
     return (
         <>
-
-{/* 6. 書籍詳細画面 */}
-    <div id="book-detail" className="screen active">
+    <div id="book-detail" className={className}>
       <div className="header">
         <h1>書籍詳細</h1>
         <div className="user-info">
-          <div className="user-avatar">田</div>
-          <span>田中太郎</span>
+          <span>ログイン : 田中太郎</span>
         </div>
       </div>
       <div className="content">

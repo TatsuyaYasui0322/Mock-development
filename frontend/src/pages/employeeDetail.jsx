@@ -1,16 +1,13 @@
 import React from 'react';
 import '../styles/employeeDetail.css';
 
-function EmployeeDetail() {
+function EmployeeDetail({ className }) {
   return (
-    <>
-{/* 4. 社員詳細画面 */}
-    <div id="employee-detail" className="screen active">
+    <div id="employee-detail" className={className}>
       <div className="header">
         <h1>社員詳細</h1>
         <div className="user-info">
-          <div className="user-avatar">田</div>
-          <span>田中太郎</span>
+          <span>ログイン : 田中太郎</span>
         </div>
       </div>
       <div className="content">
@@ -31,10 +28,6 @@ function EmployeeDetail() {
             <div className="info-item">
               <div className="info-label">言語スキル</div>
               <div className="info-value">Java, Python, SQL</div>
-            </div>
-            <div className="info-item">
-              <div className="info-label">好きな言葉</div>
-              <div className="info-value">「継続は力なり」</div>
             </div>
           </div>
         </div>
@@ -70,13 +63,12 @@ function EmployeeDetail() {
         <div className="detail-card">
           <h3>現在利用中の席</h3>
           <p>
-            席番号: <strong>A-15</strong> | 使用開始: <strong>09:30</strong> |
-            予定終了: <strong>18:00</strong>
+            席番号: <strong>A-15</strong> | 使用開始: <strong>09:30</strong> | 予定終了: <strong>18:00</strong>
           </p>
         </div>
       </div>
     </div>
-    </>
-    );
+  );
 }
+
 export default EmployeeDetail;
