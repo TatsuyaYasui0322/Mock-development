@@ -8,7 +8,7 @@ import BookList from "../../pages/BookList";
 import BookDetail from "../../pages/BookDetail";
 import SeatList from "../../pages/SeatList";
 import SeatRegister from "../../pages/SeatRegister";
-import AddBook from "../../pages/AddBook";
+import AddBook from "../../pages/AaddBook";
 import AddEmployee from "../../pages/AddEmployee";
 
 function Homepage() {
