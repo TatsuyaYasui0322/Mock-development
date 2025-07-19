@@ -1,14 +1,13 @@
 import React from 'react';
 import '../styles/dashboard.css';
 
-function Dashboard() {
+function Dashboard({ className }) {
     return (
-        <div id="dashboard" className=" screen active">
+        <div id="dashboard" className={className}>
             <div className="header">
                 <h1>ダッシュボード</h1>
                 <div className="user-info">
-                    <div className="user-avatar">田</div>
-                    <span>田中太郎 (管理者)</span>
+                    <span>ログイン : 田中太郎</span>
                 </div>
             </div>
             <div className="content">

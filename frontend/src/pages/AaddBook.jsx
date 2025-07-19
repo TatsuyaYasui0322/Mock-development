@@ -1,17 +1,14 @@
 import React from 'react';
 import '../styles/addBook.css';
 
-function AddBook() {
+function AddBook({ className }) {
   return (
     <>
-
-{/* 9. 書籍追加画面（管理者） */}
-    <div id="add-book" className="screen active">
+    <div id="add-book" className={className}>
       <div className="header">
-        <h1>書籍追加 (管理者)</h1>
+        <h1>書籍追加</h1>
         <div className="user-info">
-          <div className="user-avatar">田</div>
-          <span>田中太郎 (管理者)</span>
+          <span>ログイン : 田中太郎</span>
         </div>
       </div>
       <div className="content">

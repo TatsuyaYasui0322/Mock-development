@@ -1,17 +1,14 @@
 import React from "react";
 import '../styles/addEmployee.css';
 
-function AddEmployee() {
+function AddEmployee({ className }) {
   return (
     <>
-
-{/* 10. 社員登録画面（管理者） */}
-    <div id="add-employee" className="screen active">
+    <div id="add-employee" className={className}>
       <div className="header">
-        <h1>社員登録 (管理者)</h1>
+        <h1>社員登録</h1>
         <div className="user-info">
-          <div className="user-avatar">田</div>
-          <span>田中太郎 (管理者)</span>
+          <span>ログイン : 田中太郎</span>
         </div>
       </div>
       <div className="content">
@@ -105,10 +102,6 @@ function AddEmployee() {
           <div className="form-group">
             <label>言語・技術スキル (カンマ区切り)</label>
             <input type="text" placeholder="Java, Python, JavaScript, React" />
-          </div>
-          <div className="form-group">
-            <label>好きな言葉・モットー</label>
-            <input type="text" placeholder="継続は力なり" />
           </div>
           <div className="form-group">
             <label>備考</label>

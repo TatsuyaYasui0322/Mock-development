@@ -1,16 +1,13 @@
 import React from 'react';
 import '../styles/employeeList.css';
 
-function EmployeeList() {
+function EmployeeList({ className, onShowDetail }) {
   return (
-    <>
-{/* 3. 社員一覧画面 */}
-    <div id="employees" className="screen active">
+    <div id="employees" className={className}>
       <div className="header">
         <h1>社員一覧</h1>
         <div className="user-info">
-          <div className="user-avatar">田</div>
-          <span>田中太郎</span>
+          <span>ログイン : 田中太郎</span>
         </div>
       </div>
       <div className="content">
@@ -61,8 +58,8 @@ function EmployeeList() {
             </thead>
             <tbody>
               <tr
-                onclick="showScreen('employee-detail')"
-                style={{ cursor: "pointer" }}
+                onClick={() => onShowDetail('employee-detail')}
+                style={{ cursor: 'pointer' }}
               >
                 <td>EMP001</td>
                 <td>田中太郎</td>
@@ -70,27 +67,57 @@ function EmployeeList() {
                 <td>東京本社</td>
                 <td>Java, Python</td>
                 <td>
-                  <button className="btn btn-secondary">詳細</button>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onShowDetail('employee-detail');
+                    }}
+                  >
+                    詳細
+                  </button>
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={() => onShowDetail('employee-detail')}
+                style={{ cursor: 'pointer' }}
+              >
                 <td>EMP002</td>
                 <td>佐藤花子</td>
                 <td>営業部</td>
                 <td>大阪支社</td>
                 <td>-</td>
                 <td>
-                  <button className="btn btn-secondary">詳細</button>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onShowDetail('employee-detail');
+                    }}
+                  >
+                    詳細
+                  </button>
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={() => onShowDetail('employee-detail')}
+                style={{ cursor: 'pointer' }}
+              >
                 <td>EMP003</td>
                 <td>山田次郎</td>
                 <td>開発部</td>
                 <td>東京本社</td>
                 <td>JavaScript, React</td>
                 <td>
-                  <button className="btn btn-secondary">詳細</button>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onShowDetail('employee-detail');
+                    }}
+                  >
+                    詳細
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -98,7 +125,7 @@ function EmployeeList() {
         </div>
       </div>
     </div>
-    </>
-    );
+  );
 }
+
 export default EmployeeList;
