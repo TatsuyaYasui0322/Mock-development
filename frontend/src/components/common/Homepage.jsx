@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import Dashboard from "../../pages/Dashboard";
+import Dashboard from "../../pages/Dashboard1";
 import Navigation from "./Navigation";
-import EmployeeList from "../../pages/EmployeeList";
-import EmployeeDetail from "../../pages/EmployeeDetail";
-import BookList from "../../pages/BookList";
-import BookDetail from "../../pages/BookDetail";
-import SeatList from "../../pages/SeatList";
-import SeatRegister from "../../pages/SeatRegister";
+import EmployeeList from "../../pages/EmployeeList1";
+import EmployeeDetail from "../../pages/EmployeeDetail1";
+import BookList from "../../pages/BookList1";
+import BookDetail from "../../pages/BookDetail1";
+import SeatList from "../../pages/SeatList1";
+import SeatRegister from "../../pages/SeatRegister1";
 import AddBook from "../../pages/AaddBook";
-import AddEmployee from "../../pages/AddEmployee";
+import AddEmployee from "../../pages/AddEmployee1";
 
 function Homepage() {
   const [activeScreen, setActiveScreen] = useState("dashboard");
