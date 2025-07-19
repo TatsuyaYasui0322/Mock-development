@@ -1,15 +1,15 @@
 import React from "react";
-import Dashboard from "./Dashboard";
+import Dashboard from "./Dashboard1";
 import Navigation from "./nabigation";
 import Login from "./login";
-import EmployeeList from "./EmployeeList";
-import EmployeeDetail from "./EmployeeDetail";
-import BookList from "./BookList";
-import BookDetail from "./BookDetail";
+import EmployeeList from "./EmployeeList1";
+import EmployeeDetail from "./EmployeeDetail1";
+import BookList from "./BookList1";
+import BookDetail from "./BookDetail1";
 import SeatList from "./SeatList";
 import SeatRegister from "./SeatRegister";
 import AddBook from "./AaddBook";
-import AddEmployee from "./AddEmployee";
+import AddEmployee from "./AddEmployee1";
 
 function Homepage() {
   return (
