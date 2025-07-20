@@ -1,6 +1,0 @@
-{
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "javascript.suggest.autoImports": true,
-    "typescript.suggest.autoImports": true
-}
