@@ -16,7 +16,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Book")
+@Table(name = "Book") // テーブル名を指定
 public class Book {
     
     @Id
@@ -46,17 +46,17 @@ public class Book {
     private Boolean isReserved = false;
     
     // 関連エンティティ
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reserved_id")
+    @ManyToOne(fetch = FetchType.LAZY) // 多対一の関係 LAZYロード
+    @JoinColumn(name = "reserved_id") //社員IDとの外部キー
     private Employee reservedBy;
     
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY) //idだけではないのでbook
     private List<Loan> loans;
     
     // デフォルトコンストラクタ
     public Book() {}
     
-    // コンストラクタ
+    // コンストラクタ 新しくデータを追加する際に使用
     public Book(String bookTitle, String bookCategory, String bookSummary, 
                String bookAuthor, String bookPublisher, LocalDate publishDate) {
         this.bookTitle = bookTitle;
