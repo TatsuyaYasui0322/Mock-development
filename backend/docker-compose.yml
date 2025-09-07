@@ -1,7 +1,7 @@
 services:
   mysql:
     image: mysql:8.0
-    container_name: mysql-container
+    container_name: fastAPI-container
     environment:
       MYSQL_ROOT_PASSWORD: mockpassword
       MYSQL_DATABASE: mock_db
@@ -18,7 +18,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: springboot-app
+    container_name: fastAPI-app
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mock_db
       SPRING_DATASOURCE_USERNAME: root
