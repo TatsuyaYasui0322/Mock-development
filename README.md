@@ -1,2 +1,2 @@
 # Mock-development
-Java(springboot)の模擬開発として
+fast apiの模擬開発として
