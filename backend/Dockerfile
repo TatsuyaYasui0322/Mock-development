@@ -1,19 +1,27 @@
-FROM openjdk:17-jdk-slim
+# Python 3.11を使用
+FROM python:3.11-slim
 
-WORKDIR /backend
+# 作業ディレクトリを設定
+WORKDIR /app
 
-COPY pom.xml /backend/
-COPY src /backend/src
-COPY mvnw /backend/mvnw
-COPY mvnw.cmd /backend/mvnw.cmd
-COPY .mvn /backend/.mvn
+# システムの依存関係をインストール
+RUN apt-get update && apt-get install -y \
+    gcc \
+    default-libmysqlclient-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN chmod +x /backend/mvnw
+# Pythonの依存関係ファイルをコピー
+COPY requirements.txt .
 
-RUN ./mvnw clean package -DskipTests
+# Pythonの依存関係をインストール
+RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8080
+# アプリケーションのソースコードをコピー
+COPY ./app /app
 
-CMD ["java", "-jar", "/backend/target/demo-0.0.1-SNAPSHOT.jar"]
+# ポート8000を公開
+EXPOSE 8000
 
-ENV SPRING_PROFILES_ACTIVE=prod
+# Fast APIアプリケーションを起動
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

@@ -1,35 +1,47 @@
 services:
   mysql:
     image: mysql:8.0
-    container_name: fastAPI-container
+    container_name: fastapi-mysql
     environment:
       MYSQL_ROOT_PASSWORD: mockpassword
       MYSQL_DATABASE: mock_db
+      MYSQL_USER: fastapi_user
+      MYSQL_PASSWORD: fastapi_password
     ports:
       - "3307:3306"
     volumes:
-      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
-      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
+      - mysql_data:/var/lib/mysql
       - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - app-network
+    restart: unless-stopped
 
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: fastAPI-app
+    container_name: fastapi-app
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mock_db
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: mockpassword
+      # Fast API用の環境変数
+      DATABASE_URL: mysql+pymysql://root:mockpassword@mysql:3306/mock_db
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: mockpassword
+      MYSQL_DATABASE: mock_db
     ports:
-      - "8080:8080"
+      - "8000:8000"  # Fast APIの標準ポート
     depends_on:
       - mysql
     networks:
       - app-network
+    restart: unless-stopped
+    volumes:
+      - ./app:/app  # ソースコードのマウント（開発用）
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  mysql_data:  # データ永続化用
